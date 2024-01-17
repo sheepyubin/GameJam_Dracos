@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5240666643579769728}
   - component: {fileID: 234236602367086405}
+  - component: {fileID: 4391672167376548548}
   m_Layer: 0
   m_Name: Skill range
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4391672167376548548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417986540235376934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fecd54f3ee38f245b488e8ca8926349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quakePrefab: {fileID: 7489694022451202871, guid: e19f96fd3dba99c479fc8ef5d97df1fc, type: 3}

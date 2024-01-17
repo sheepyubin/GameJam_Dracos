@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DustGeneration : MonoBehaviour
 {
-    public float speed;
-    public float lifeTime;
+    public float speed = 3f;
+    public float lifeTime = 1f;
     public float angle = 20f;
 
     private float attackAngle;

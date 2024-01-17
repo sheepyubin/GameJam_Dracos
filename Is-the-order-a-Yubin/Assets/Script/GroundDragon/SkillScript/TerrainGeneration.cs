@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class TerrainGeneration : MonoBehaviour
 {
-    public float speed;
+    public float speed = 10f;
     public float lifeTime = 20f;
     public float angle = 20f;
 
-    public float nomalStopTime = 2f;
+    public float nomalStopTime = 0.5f;
     private float stopTimer = 0f;
 
     private bool move = true;

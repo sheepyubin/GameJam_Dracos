@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuakeDisappear : MonoBehaviour
 {
-    public float lifeTime;
+    public float lifeTime = 1f;
     private float lifeTimeR;
     private CircleCollider2D circleCollider2D;
 

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class StoneShot : MonoBehaviour
 {
-    public float speed;
-    public float lifeTime;
+    public float speed = 10f;
+    public float lifeTime = 2f;
     // Start is called before the first frame update
     void Start()
     {
