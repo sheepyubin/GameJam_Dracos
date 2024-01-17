@@ -129,6 +129,7 @@ MonoBehaviour:
   speed: 10
   lifeTime: 10
   damage: 5
+  curDamage: 0
 --- !u!61 &8863562735502892391
 BoxCollider2D:
   m_ObjectHideFlags: 0
