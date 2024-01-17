@@ -229,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: boidPrefab
       value: 
-      objectReference: {fileID: -9176441130944424737, guid: 0ea369b5bcc7b924d8dbf1316c64f1b4, type: 3}
+      objectReference: {fileID: 7385266367027141129, guid: 5ce44fd8903343e46ade4bc1bd28dcd8, type: 3}
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: spawnRadius
       value: 22
@@ -454,6 +454,10 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
+      propertyPath: boidPrefab
+      value: 
+      objectReference: {fileID: 8610906871582142908, guid: 7914968d84c6d5a40a018fb10a0fe230, type: 3}
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: spawnRadius
       value: 22
