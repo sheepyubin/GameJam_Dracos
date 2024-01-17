@@ -18,7 +18,6 @@ public class Fire : MonoBehaviour
     private void Awake()
     {
         M_HP = FindObjectOfType<Monster_HP>();
-
     }
 
     // Update is called once per frame
