@@ -7,6 +7,7 @@ public class RedDragon_Move : MonoBehaviour
     public float speed = 1;
     public float stoppingDistance = 0.3f;
     public GameObject flamePrefab;
+    public GameObject sPoint;
 
     public int AtkStyle = 1;
 
@@ -79,7 +80,7 @@ public class RedDragon_Move : MonoBehaviour
        
         if (flamePrefab != null)
         {
-            Instantiate(flamePrefab, transform.position, transform.rotation);
+            Instantiate(flamePrefab, sPoint.transform.position, transform.rotation);
         }
         else
         {

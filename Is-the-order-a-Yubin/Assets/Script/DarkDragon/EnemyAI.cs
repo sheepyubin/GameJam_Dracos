@@ -10,12 +10,14 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
     Enemy enemy;
     DarkDragon dd;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
         // DarkDragon 및 Enemy 컴포넌트 가져오기
         dd = GetComponent<DarkDragon>();
         enemy = GetComponent<Enemy>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // 스킬 딜레이 감소 함수
@@ -89,11 +91,13 @@ public class EnemyAI : MonoBehaviour
         // 타겟이 왼쪽에 있으면 스케일을 -1로 설정하여 좌우 반전
         if (target.position.x - transform.position.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
+            //transform.localScale = new Vector3(-1, 1, 1);
         }
         else // 타겟이 오른쪽에 있으면 스케일을 1로 설정
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
+            //transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
