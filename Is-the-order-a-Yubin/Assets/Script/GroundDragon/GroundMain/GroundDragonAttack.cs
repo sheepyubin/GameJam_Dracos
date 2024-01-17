@@ -42,7 +42,7 @@ public class GroundDragonAttack : MonoBehaviour
                 case 3:
                     Terrain();
                     break;
-                case 6:
+                case 7:
                     ShowSkillRange();
                     ShowDustSRange();
                     break;
