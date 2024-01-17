@@ -90,10 +90,10 @@ public class Enemy : MonoBehaviour
     public GameObject prfHpBar;     // 체력바 프리팹
     public GameObject canvas;       // 캔버스
 
-    GameObject hpBar;            // 체력바 RectTransform
-    public float height = 1.7f;      // 체력바 높이
+    GameObject hpBar;               // 체력바 RectTransform
+    public float height = 1.7f;     // 체력바 높이
 
-    public MoveScript Player;        // 플레이어 객체
+    public MoveScript Player;       // 플레이어 객체
 
     // 시작 시 호출되는 함수
     void Start()
@@ -103,6 +103,7 @@ public class Enemy : MonoBehaviour
         hpBar = Instantiate(prfHpBar, canvas.transform);
         SetEnemyStatus("DarkDragon", 1000, 3f, 500f);
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
+        SetDarkDragonSkill();
     }
 
     // 프레임마다 호출되는 함수
