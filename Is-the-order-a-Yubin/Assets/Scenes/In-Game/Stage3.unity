@@ -1248,6 +1248,10 @@ PrefabInstance:
       propertyPath: fightImage
       value: 
       objectReference: {fileID: 21300000, guid: 18c711d323292a945837a5533d2f8a4f, type: 3}
+    - target: {fileID: 4768131946688445370, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+      propertyPath: FightButton
+      value: 
+      objectReference: {fileID: 1815183878}
     - target: {fileID: 8363564054635452928, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
       propertyPath: target
       value: 

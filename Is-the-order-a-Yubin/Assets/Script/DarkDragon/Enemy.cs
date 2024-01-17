@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
     public float fieldOfVision;     // 시야 범위
 
     public GameObject FightImage;
+    public GameObject FightButton;
     public bool isFitting = false;  //체력 감소하는지 변수
     public bool isStrengthen= false;  //강화중인지 변수
 
@@ -45,15 +46,15 @@ public class Enemy : MonoBehaviour
         hpBar.SetActive(false);
         isStrengthen = true;
         FightImage.SetActive(true);
-        GameObject.Find("Canvas").transform.GetChild(5).gameObject.SetActive(true);
+        FightButton.SetActive(true);
     }
     public void DoneFit()
     {
         hpBar.SetActive(true);
         isStrengthen = false;
-        isFitting = true;
         FightImage.SetActive(false);
-        GameObject.Find("Canvas").transform.GetChild(5).gameObject.SetActive(false);
+        FightButton.SetActive(true);
+        isFitting = true;
 
         Debug.Log("크와아앙");
         //여기에 강화 로직
