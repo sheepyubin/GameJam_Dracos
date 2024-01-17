@@ -87,7 +87,7 @@ public class DarkDragon : MonoBehaviour
     {
         int i = 0;
         Debug.Log("≤ø∏Æ∆Ú≈∏");
-        HitPlayer(6);
+        HitPlayer(20);
 
         enemy.isAttacking = false;
 
@@ -101,11 +101,7 @@ public class DarkDragon : MonoBehaviour
     {
         int i = 0;
         Debug.Log("πﬂ≈È∆Ú≈∏");
-
-        //while (i < 0)
-        //{
-            HitPlayer(8);
-        //}
+        HitPlayer(20);
 
         enemy.isAttacking = false;
 

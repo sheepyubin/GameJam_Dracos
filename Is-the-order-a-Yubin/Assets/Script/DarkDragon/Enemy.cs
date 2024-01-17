@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +34,30 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;         // 이동 속도
     public float fieldOfVision;     // 시야 범위
 
+    public GameObject FightImage;
+    public bool isFitting = false;  //체력 감소하는지 변수
+    public bool isStrengthen= false;  //강화중인지 변수
+
     public Skill[] SkillList;       // 스킬 리스트
+
+    private void StartFit()
+    {
+        hpBar.SetActive(false);
+        isStrengthen = true;
+        FightImage.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(5).gameObject.SetActive(true);
+    }
+    public void DoneFit()
+    {
+        hpBar.SetActive(true);
+        isStrengthen = false;
+        isFitting = true;
+        FightImage.SetActive(false);
+        GameObject.Find("Canvas").transform.GetChild(5).gameObject.SetActive(false);
+
+        Debug.Log("크와아앙");
+        //여기에 강화 로직
+    }
 
     // DarkDragon 스킬 초기화 함수
     private void SetDarkDragonSkill()
@@ -65,7 +89,7 @@ public class Enemy : MonoBehaviour
     public GameObject prfHpBar;     // 체력바 프리팹
     public GameObject canvas;       // 캔버스
 
-    RectTransform hpBar;            // 체력바 RectTransform
+    GameObject hpBar;            // 체력바 RectTransform
     public float height = 1.7f;      // 체력바 높이
 
     public MoveScript Player;        // 플레이어 객체
@@ -73,11 +97,11 @@ public class Enemy : MonoBehaviour
     // 시작 시 호출되는 함수
     void Start()
     {
+        Invoke("StartFit", 2f);
         // 체력바 생성 및 초기화
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        hpBar = Instantiate(prfHpBar, canvas.transform);
         SetEnemyStatus("DarkDragon", 1000, 3f, 500f);
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
-        SetDarkDragonSkill();
     }
 
     // 프레임마다 호출되는 함수
@@ -85,22 +109,25 @@ public class Enemy : MonoBehaviour
     {
         // 체력바 위치 업데이트
         Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
-        hpBar.position = _hpBarPos;
+        hpBar.GetComponent<RectTransform>().position = _hpBarPos;
         nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
 
     // 플레이어와의 충돌 시 호출되는 함수
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if(isFitting)
         {
-            // 플레이어 공격 시 체력 감소 및 사망 체크
-            if (Player.attacked)
+            if (col.CompareTag("Player"))
             {
-                nowHp -= Player.atkDmg;
-                Player.attacked = false;
+                // 플레이어 공격 시 체력 감소 및 사망 체크
+                if (Player.attacked)
+                {
+                    nowHp -= Player.atkDmg;
+                    Player.attacked = false;
 
-                if (nowHp <= 0) Die(); // 사망 처리
+                    if (nowHp <= 0) Die(); // 사망 처리
+                }
             }
         }
     }

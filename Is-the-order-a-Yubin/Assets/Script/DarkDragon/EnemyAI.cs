@@ -32,40 +32,43 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        // 스킬 딜레이 감소 함수 1초마다 호출
-        Invoke("DecreaseDelay", 1f);
-        // 타겟과의 거리 계산
-        float distance = Vector3.Distance(transform.position, target.position);
-
-        // 시야 범위 안에 들어올 때
-        if (distance <= enemy.fieldOfVision)
+        if (!enemy.isStrengthen)
         {
-            FaceTarget(); // 타겟을 바라보기
+            // 스킬 딜레이 감소 함수 1초마다 호출
+            Invoke("DecreaseDelay", 1f);
+            // 타겟과의 거리 계산
+            float distance = Vector3.Distance(transform.position, target.position);
 
-            // 공격 중이면 타겟을 향해 이동
-            if (enemy.isAttacking)    
-                MoveToTarget();
-            else
+            // 시야 범위 안에 들어올 때
+            if (distance <= enemy.fieldOfVision)
             {
-                List<Skill> skill = new List<Skill>();
+                FaceTarget(); // 타겟을 바라보기
 
-                // 사용 가능한 스킬을 찾아 리스트에 추가
-                for (int i = 0; i < enemy.SkillList.Length; i++)
-                {
-                    if (enemy.SkillList[i].NowDelay == 0)
-                        if (distance <= enemy.SkillList[i].AtkField)
-                            skill.Add(enemy.SkillList[i]);
-                }
-
-                // 사용 가능한 스킬이 있으면 랜덤으로 선택하여 타겟 공격
-                if (skill.Count > 0)
-                {
-                    int i = Random.Range(0, skill.Count);
-                    AttackTarget(skill[i]);
-                    skill.Clear();
-                }
-                else
+                // 공격 중이면 타겟을 향해 이동
+                if (enemy.isAttacking)    
                     MoveToTarget();
+                else
+                {
+                    List<Skill> skill = new List<Skill>();
+
+                    // 사용 가능한 스킬을 찾아 리스트에 추가
+                    for (int i = 0; i < enemy.SkillList.Length; i++)
+                    {
+                        if (enemy.SkillList[i].NowDelay == 0)
+                            if (distance <= enemy.SkillList[i].AtkField)
+                                skill.Add(enemy.SkillList[i]);
+                    }
+
+                    // 사용 가능한 스킬이 있으면 랜덤으로 선택하여 타겟 공격
+                    if (skill.Count > 0)
+                    {
+                        int i = Random.Range(0, skill.Count);
+                        AttackTarget(skill[i]);
+                        skill.Clear();
+                    }
+                    else
+                        MoveToTarget();
+                }
             }
         }
     }

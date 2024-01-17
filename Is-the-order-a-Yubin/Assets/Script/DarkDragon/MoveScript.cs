@@ -29,7 +29,7 @@ public class MoveScript : MonoBehaviour
         // "fire" 태그의 오브젝트와 충돌 시
         if (collision.tag == "fire")
         {
-            nowHp -= 5;
+            nowHp -= 30;
             Destroy(collision.gameObject);
         }
     }
