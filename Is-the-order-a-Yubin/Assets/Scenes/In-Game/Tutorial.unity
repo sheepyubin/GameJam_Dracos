@@ -342,7 +342,7 @@ MonoBehaviour:
   cameraPosition: {x: 0, y: 0, z: 0}
   center: {x: 0, y: 0}
   mapSize: {x: 22, y: 22}
-  cameraMoveSpeed: 0
+  cameraMoveSpeed: 100
 --- !u!1 &495446963
 GameObject:
   m_ObjectHideFlags: 0
