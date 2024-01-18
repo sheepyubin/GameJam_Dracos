@@ -16,7 +16,9 @@ public class Head_Rotate : MonoBehaviour
     void Update()
     {
         mouse=Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        angle = Mathf.Atan2(mouse.y - target.y, mouse.x - target.x) * Mathf.Rad2Deg;
-        this.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        angle = Mathf.Atan2(mouse.y -target.y , mouse.x -target.x) * Mathf.Rad2Deg;
+        Debug.Log(angle);
+        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        transform.rotation = rotation;
     }
 }
