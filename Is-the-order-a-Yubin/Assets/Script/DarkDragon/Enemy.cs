@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     public float fieldOfVision;     // 시야 범위
 
     public GameObject FightImage;
-    public GameObject FightButton;
+    //public GameObject FightButton;
     public bool isFitting = false;  //체력 감소하는지 변수
     public bool isStrengthen= false;  //강화중인지 변수
 
@@ -52,18 +52,18 @@ public class Enemy : MonoBehaviour
         hpBar.SetActive(false);
         isStrengthen = true;
         FightImage.SetActive(true);
-        FightButton.SetActive(true);
+        //FightButton.SetActive(true);
     }
     public void DoneFit()
     {
         hpBar.SetActive(true);
         isStrengthen = false;
         FightImage.SetActive(false);
-        FightButton.SetActive(true);
+        //FightButton.SetActive(true);
         isFitting = true;
 
         Debug.Log("크와아앙");
-        spriteRenderer.sprite = sprites[0];
+        //spriteRenderer.sprite = sprites[0];
     }
 
     // DarkDragon 스킬 초기화 함수
@@ -104,14 +104,14 @@ public class Enemy : MonoBehaviour
     // 시작 시 호출되는 함수
     void Start()
     {
-        Invoke("StartFit", 2f);
+        Invoke("StartFit", 15f);
         // 체력바 생성 및 초기화
         hpBar = Instantiate(prfHpBar, canvas.transform);
         SetEnemyStatus("DarkDragon", 1000, 3f, 500f);
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
         SetDarkDragonSkill();
         sprites = Resources.LoadAll<Sprite>("Resources/Charactor/BuleDragon");
-        Debug.Log(sprites[0]);
+        //Debug.Log(sprites[0]);
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

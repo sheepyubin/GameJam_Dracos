@@ -890,7 +890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[0]
@@ -907,23 +907,23 @@ PrefabInstance:
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1383149803}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[4]
       value: 
-      objectReference: {fileID: 1383149803}
+      objectReference: {fileID: 508072005}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[5]
       value: 
-      objectReference: {fileID: 508072005}
+      objectReference: {fileID: 537700434}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[6]
       value: 
-      objectReference: {fileID: 537700434}
+      objectReference: {fileID: 1039671505}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[7]
       value: 
-      objectReference: {fileID: 1039671505}
+      objectReference: {fileID: 1490667047}
     - target: {fileID: 6523801016445118155, guid: 9d3c6ffb3f25a8f4aa32d0436494d0ea, type: 3}
       propertyPath: elements.Array.data[8]
       value: 
@@ -1142,7 +1142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1818978398
 SpriteRenderer:
   m_ObjectHideFlags: 0
