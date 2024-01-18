@@ -87,7 +87,7 @@ public class DarkDragon : MonoBehaviour
     {
         int i = 0;
         Debug.Log("꼬리평타");
-        HitPlayer(20);
+        //HitPlayer(20);    //플레이어 체력 깎기
 
         enemy.isAttacking = false;
 
@@ -101,7 +101,7 @@ public class DarkDragon : MonoBehaviour
     {
         int i = 0;
         Debug.Log("발톱평타");
-        HitPlayer(20);
+        //HitPlayer(20);    //플레이어 체력 깎기
 
         enemy.isAttacking = false;
 

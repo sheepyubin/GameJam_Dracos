@@ -957,8 +957,8 @@ GameObject:
   - component: {fileID: 1538939795}
   - component: {fileID: 1538939794}
   m_Layer: 9
-  m_Name: Player (1)
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1308,6 +1308,14 @@ PrefabInstance:
       propertyPath: FightButton
       value: 
       objectReference: {fileID: 1815183878}
+    - target: {fileID: 4768131946688445370, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 1538939793}
+    - target: {fileID: 4768131946688445370, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+      propertyPath: BlueDragonImage
+      value: 
+      objectReference: {fileID: 21300000, guid: b373a97afea83ef40b4a1ff1701c7001, type: 3}
     - target: {fileID: 8363564054635452928, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
       propertyPath: target
       value: 
@@ -1316,6 +1324,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 97f7f249a05b12a47934545663e54769, type: 3}
+    - target: {fileID: 9008510392581628249, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008510392581628249, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008510392581628249, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9008510392581628249, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -1330,6 +1350,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3273293203474759872, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
   m_PrefabInstance: {fileID: 1615570099}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615570105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4768131946688445370, guid: 5c42b97bb01cea24587a0c46d31dda04, type: 3}
+  m_PrefabInstance: {fileID: 1615570099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615570100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16dd5fe1f70a7734aa1b8d4a618e6fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1638273429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1809,7 +1840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1815183881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1615570105}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: DoneFit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1815183881
 MonoBehaviour:
   m_ObjectHideFlags: 0
