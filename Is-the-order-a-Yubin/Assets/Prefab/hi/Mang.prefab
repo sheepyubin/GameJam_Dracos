@@ -137,4 +137,3 @@ MonoBehaviour:
   nowHpbar: {fileID: 0}
   prfHpBar: {fileID: 2156048012521097205, guid: 25cfca94e89e4aa48a04d53bddd137dd, type: 3}
   canvas: {fileID: 0}
-  height: 1.7

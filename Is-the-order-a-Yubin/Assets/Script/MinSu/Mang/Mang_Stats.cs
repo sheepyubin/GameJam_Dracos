@@ -10,11 +10,11 @@ public class Mang_Stats : Character_Stats
     public GameObject canvas;       // 캔버스
 
     GameObject hpBar;               // 체력바 RectTransform
-     int nowHp;
+    int nowHp;
     int maxHp;
     void Start()
     {
-
+        MOV = 5;
         hpBar = Instantiate(prfHpBar, canvas.transform);
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
         MangStats(3, 100, 3, 2, 3);
@@ -31,6 +31,12 @@ public class Mang_Stats : Character_Stats
         ATK_Speed = _ATK_Speed;
         HP_Recovery = _HP_recover;
     }
+
+    public int returnMOV()
+    {
+        Debug.Log("returnMOV을 호출");
+        return MOV;
+    }
     void Update()
     {
         // 체력바 위치 업데이트
@@ -38,4 +44,6 @@ public class Mang_Stats : Character_Stats
         hpBar.GetComponent<RectTransform>().position = _hpBarPos;
         nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
     }
+
+
 }

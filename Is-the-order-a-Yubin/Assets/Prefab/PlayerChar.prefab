@@ -44,8 +44,7 @@ GameObject:
   - component: {fileID: 2425451677600152245}
   - component: {fileID: 1724654339703096783}
   - component: {fileID: 6685301813662171084}
-  - component: {fileID: 7891200158945242516}
-  - component: {fileID: 3403358460409276288}
+  - component: {fileID: 6395050963650052638}
   m_Layer: 0
   m_Name: PlayerChar
   m_TagString: Player
@@ -191,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &7891200158945242516
+--- !u!114 &6395050963650052638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,32 +199,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6861135536503285443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce5d19cdf8476884bacd9a78c3badca8, type: 3}
+  m_Script: {fileID: 11500000, guid: ec780e3917369ff45bb9f19c7295c1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ATK: 0
-  MOV: 0
-  HP: 0
-  ATK_Speed: 0
-  HP_Recovery: 0
---- !u!114 &3403358460409276288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6861135536503285443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8aecad0abc396e4789b17d7f9397e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ATK: 0
-  MOV: 0
-  HP: 0
-  ATK_Speed: 0
-  HP_Recovery: 0
-  nowHpbar: {fileID: 5576440547280996836, guid: 25cfca94e89e4aa48a04d53bddd137dd, type: 3}
-  prfHpBar: {fileID: 0}
-  canvas: {fileID: 0}
-  height: 1.7
+  bullte: {fileID: 0}
+  sPoint: {fileID: 0}
+  timeBetweenShots: 1

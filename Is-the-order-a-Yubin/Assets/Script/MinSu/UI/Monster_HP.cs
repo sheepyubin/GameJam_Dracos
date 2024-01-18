@@ -34,11 +34,10 @@ public class Monster_HP : MonoBehaviour
         if (maxHealth == 0 || curHealth <= 0) //* 이미 체력 0이하면 패스
             return;
         curHealth -= damage;
-        Debug.Log("데미지를 받았습니다.");
         if (curHealth <= 0)
         {
             gameObject.SetActive(false);
-            Debug.Log("비활성화 성공");
+
 
             if (playerCharacter != null)
             {

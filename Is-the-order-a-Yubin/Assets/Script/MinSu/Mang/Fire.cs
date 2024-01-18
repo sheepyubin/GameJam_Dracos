@@ -7,7 +7,7 @@ public class Fire : MonoBehaviour
     public float speed;
     public float lifeTime;
     public int damage = 5;
-    public int curDamage=0;
+    public int curDamage=3;
 
     Monster_HP M_HP;
     // Start is called before the first frame update
@@ -33,12 +33,14 @@ public class Fire : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("데미지"+damage);
-        M_HP.Damage(damage);
+        if(M_HP != null)
+        {
+            M_HP.Damage(damage);
+        }
+       
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("데미지" + damage);
         M_HP.Damage(damage);
     }
 }
