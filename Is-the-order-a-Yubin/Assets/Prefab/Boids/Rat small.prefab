@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5542040461591540754}
   - component: {fileID: 8487383047411769599}
   - component: {fileID: 6596120976251187091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rat small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.29, y: 0.09}
