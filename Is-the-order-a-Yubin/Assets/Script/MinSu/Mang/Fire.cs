@@ -9,7 +9,7 @@ public class Fire : MonoBehaviour
     public int damage = 5;
     public int curDamage=3;
 
-    Monster_HP M_HP;
+    HP_Bar M_HP;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class Fire : MonoBehaviour
     }
     private void Awake()
     {
-        M_HP = FindObjectOfType<Monster_HP>();
+        M_HP = FindObjectOfType<HP_Bar>();
         curDamage = damage;
     }
 

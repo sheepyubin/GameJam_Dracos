@@ -24,8 +24,6 @@ public class power_button : MonoBehaviour
 
     public void power_call()
     {
-        Debug.Log("공격력 콜 받음");
-
         gameObject.SetActive(true);
     }
     public void falseObject()

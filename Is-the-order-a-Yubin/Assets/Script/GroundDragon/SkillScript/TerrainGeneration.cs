@@ -5,6 +5,8 @@ using UnityEngine;
 public class TerrainGeneration : MonoBehaviour
 {
     EffectPlay effectPlay;
+    public HP_Bar M_HP;
+    int damage = 10;
 
     public float speed = 10f;
     public float lifeTime = 20f;
@@ -62,5 +64,18 @@ public class TerrainGeneration : MonoBehaviour
             }
             stopTimer = 0f; // 타이머 초기화
         }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (M_HP != null)
+        {
+            M_HP.Damage(damage);
+        }
+
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        M_HP.Damage(damage);
     }
 }

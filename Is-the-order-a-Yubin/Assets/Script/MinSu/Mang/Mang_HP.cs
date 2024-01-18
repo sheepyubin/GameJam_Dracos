@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Mang_HP : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Mang_HP : MonoBehaviour
     protected float curHealth; //* 현재 체력
     public float maxHealth = 10; //* 최대 체력
     public int XP=100;
-    HP_Bar bar;
+    public Slider HpBarSlider;
     public void SetHp(float amount) //*Hp설정
     {
         maxHealth = amount;
@@ -18,13 +19,14 @@ public class Mang_HP : MonoBehaviour
     void Start()
     {
         curHealth = maxHealth;
-        bar = FindObjectOfType<HP_Bar>();
         gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (HpBarSlider != null)
+            HpBarSlider.value = curHealth / maxHealth;
     }
     public void Damage(float damage) //* 데미지 받는 함수
     {
@@ -35,15 +37,6 @@ public class Mang_HP : MonoBehaviour
         if (curHealth <= 0)
         {
             gameObject.SetActive(false);
-
-            if (playerCharacter != null)
-            {
-                playerCharacter.GainExperience(XP);
-            }
-            else
-            {
-                Debug.Log("xp보내기 실패...");
-            }
         }
 
     }
