@@ -1,5 +1,4 @@
-#define UNITY_EDITOR
-
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -91,3 +90,5 @@ public class CompositeBehaviorEditor : Editor
         cb.weights = newWeights;
     }
 }
+
+#endif

@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: boidPrefab
       value: 
-      objectReference: {fileID: 5259206868408240315, guid: 76b630b23bed75c4787adfe5c2c03a02, type: 3}
+      objectReference: {fileID: -9176441130944424737, guid: dce50a673ba3e6642b168e72f274ba9a, type: 3}
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: numberOfBoid
       value: 50
@@ -799,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: boidPrefab
       value: 
-      objectReference: {fileID: 4291855827911294064, guid: 2608e6282c95c234fb734c1122566da3, type: 3}
+      objectReference: {fileID: -9176441130944424737, guid: 0ea369b5bcc7b924d8dbf1316c64f1b4, type: 3}
     - target: {fileID: 5507553038786833759, guid: 9a2684e65c340c04699d210a19116643, type: 3}
       propertyPath: numberOfBoid
       value: 200

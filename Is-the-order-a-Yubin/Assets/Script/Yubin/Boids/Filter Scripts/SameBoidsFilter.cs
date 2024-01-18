@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// SameBoidsFilter: 같은 개체를 필터링하는 ScriptableObject 클래스
+// SameBoidsFilter: 같은 개체를 필터링
 [CreateAssetMenu(menuName = "Boids/Filter/Same Boids")]
 public class SameBoidsFilter : ContextFilter
 {
@@ -29,7 +29,7 @@ public class SameBoidsFilter : ContextFilter
             }
         }
 
-        // 필터링된 인접 오브젝트 목록 반환
+        // 개체 목록 반환
         return filtered;
     }
 }
