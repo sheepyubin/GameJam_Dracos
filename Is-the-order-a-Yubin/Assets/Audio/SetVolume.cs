@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SetVolume : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    EffectPlay effectPlay;
     public AudioMixer mixer;
     public Slider MasterSlider;
     public Slider BackSlider;
@@ -15,6 +15,7 @@ public class SetVolume : MonoBehaviour
     
     void Awake()
     {
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
         MasterSlider.onValueChanged.AddListener(SetMasterVolume);
         BackSlider.onValueChanged.AddListener(SetBackVolume);
         EffectSlider.onValueChanged.AddListener(SetEffectVolume);
@@ -22,6 +23,7 @@ public class SetVolume : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
+        effectPlay.Setvolume = volume;
         mixer.SetFloat("Master", Mathf.Log10(volume) * 20);
     }
 
@@ -32,6 +34,8 @@ public class SetVolume : MonoBehaviour
 
     public void SetEffectVolume(float volume)
     {
+        Debug.Log(effectPlay.Setvolume + " " + volume);
+        effectPlay.Setvolume = volume;
         mixer.SetFloat("Effect", Mathf.Log10(volume) * 20);
     }
 }

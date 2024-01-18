@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class OptionVeiw : MonoBehaviour
+public class OptionView : MonoBehaviour
 {
-    GameObject optionTap;
+    EffectPlay effectPlay;
+    private GameObject optionTap;
     private bool isOpen = false;
 
     [System.Obsolete]
-    private void Awake()
+
+    private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
+        DontDestroyOnLoad(this);
         optionTap = transform.FindChild("Canvas").GetChild(0).gameObject;
     }
 
     private void Update()
     {
-
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log(isOpen);
-            if(isOpen)
+            effectPlay.buttonClick();
+
+            if (isOpen)
             {
                 Time.timeScale= 1.0f;
                 optionTap.SetActive(false);
@@ -39,16 +40,17 @@ public class OptionVeiw : MonoBehaviour
 
     public void ClickOptionBack()
     {
-        Debug.Log(isOpen);
+        effectPlay.buttonClick();
+
         if (isOpen)
         {
-            Time.timeScale = 1.0f;
+            Time.timeScale= 1.0f;
             optionTap.SetActive(false);
             isOpen = false;
         }
         else
         {
-            Time.timeScale = 0f;
+            Time.timeScale= 0f;
             optionTap.SetActive(true);
             isOpen = true;
         }

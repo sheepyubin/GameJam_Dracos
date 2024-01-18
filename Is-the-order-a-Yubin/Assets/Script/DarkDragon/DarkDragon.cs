@@ -18,6 +18,8 @@ public enum DarkDragonState
 
 public class DarkDragon : MonoBehaviour
 {
+    EffectPlay effectPlay; //효과음용
+
     // 화염구 프리팹 및 목표 위치
     public GameObject prfFire;
     public Transform target;
@@ -34,6 +36,8 @@ public class DarkDragon : MonoBehaviour
     // 시작 시 호출되는 함수
     private void Awake()
     {
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
+
         // 먹이 끌어당기는 영역 초기화
         eatfield = transform.GetChild(0).gameObject;
         eatfield.SetActive(false);
@@ -89,6 +93,7 @@ public class DarkDragon : MonoBehaviour
         Debug.Log("꼬리평타");
         //HitPlayer(20);    //플레이어 체력 깎기
 
+        effectPlay.enemyAttack();
         enemy.isAttacking = false;
 
         // 대기 상태로 전환
@@ -103,6 +108,7 @@ public class DarkDragon : MonoBehaviour
         Debug.Log("발톱평타");
         //HitPlayer(20);    //플레이어 체력 깎기
 
+        effectPlay.enemyAttack();
         enemy.isAttacking = false;
 
         // 대기 상태로 전환
@@ -120,6 +126,7 @@ public class DarkDragon : MonoBehaviour
         while (i < 5)
         {
             i++;
+            effectPlay.enemySkill();
             yield return new WaitForSeconds(1);
         }
 
@@ -137,6 +144,7 @@ public class DarkDragon : MonoBehaviour
         while (i < 3)
         {
             i++;
+            effectPlay.enemySkill();
             yield return new WaitForSeconds(1);
         }
 
@@ -156,6 +164,7 @@ public class DarkDragon : MonoBehaviour
         {
             i++;
             Circleshoot();
+            effectPlay.enemySkill();
             yield return new WaitForSeconds(1);
         }
 
@@ -175,6 +184,7 @@ public class DarkDragon : MonoBehaviour
         {
             i++;
             Fanshoot();
+            effectPlay.enemySkill();
             yield return new WaitForSeconds(1);
         }
 

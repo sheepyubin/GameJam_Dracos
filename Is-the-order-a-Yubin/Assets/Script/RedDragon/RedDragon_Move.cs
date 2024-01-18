@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RedDragon_Move : MonoBehaviour
 {
+    EffectPlay effectPlay; //효과음용
+
     public Transform Player;
     public float speed = 1;
     public float stoppingDistance = 0.3f;
@@ -12,6 +14,11 @@ public class RedDragon_Move : MonoBehaviour
     public int AtkStyle = 1;
 
     private bool isAttacking = false;
+
+    private void Start()
+    {
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
+    }
 
     void Update()
     {
@@ -26,6 +33,7 @@ public class RedDragon_Move : MonoBehaviour
             // Check if the distance is less than or equal to 5 and isAttacking
             if (distanceToPlayer <= 6.5 && !isAttacking)
             {
+                effectPlay.enemyAttack();
                 StartCoroutine(AttackMultipleTimes(Random.Range(50, 200), 0.02f));
             }
 

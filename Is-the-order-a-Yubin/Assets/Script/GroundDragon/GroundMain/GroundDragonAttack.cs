@@ -5,6 +5,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class GroundDragonAttack : MonoBehaviour
 {
+    EffectPlay effectPlay; //효과음용
+
     public GameObject stonePrefab; // 돌 Prefab
     public GameObject terrainPrefab; // 지형 Prefab
 
@@ -22,7 +24,7 @@ public class GroundDragonAttack : MonoBehaviour
     private int skill = 0;
     void Start()
     {
-
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class GroundDragonAttack : MonoBehaviour
         isAttacking = true;
         Instantiate(stonePrefab, sPoint.transform.position, sPoint.transform.rotation);
         skill++;
+        effectPlay.enemyAttack();
     }
     private void Terrain()
     {
@@ -62,12 +65,14 @@ public class GroundDragonAttack : MonoBehaviour
             Instantiate(terrainPrefab, transform.position, transform.rotation);
         }
         skill++;
+        effectPlay.enemyAttack();
     }
     private void ShowDustSRange()
     {
         isAttacking = true;
         Instantiate(dustRangePrefab, transform.position, Quaternion.identity);
         skill = 0;
+        effectPlay.enemySkill();
     }
     private void ShowSkillRange()
     {

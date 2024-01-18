@@ -8,11 +8,12 @@ public class Attack : MonoBehaviour
     public GameObject bullte;
     public Transform sPoint;
     public float timeBetweenShots;
+    EffectPlay effectPlay;
 
     private float shotTime;
     void Start()
     {
-        
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class Attack : MonoBehaviour
             {
                 Instantiate(bullte,sPoint.position,Quaternion.AngleAxis(angle-90,Vector3.forward));
                 shotTime = Time.time + timeBetweenShots;
+                effectPlay.playerAttack();
             }
         }
     }
