@@ -9,7 +9,7 @@ public class Monster_HP : MonoBehaviour
     protected float curHealth; //* 현재 체력
     public float maxHealth = 10; //* 최대 체력
     public int XP=100;
-    HP_Bar bar;
+    Boss_HP_Bar bar;
     public void SetHp(float amount) //*Hp설정
     {
         maxHealth = amount;
@@ -18,7 +18,7 @@ public class Monster_HP : MonoBehaviour
     void Start()
     {
         curHealth = maxHealth;
-        bar = FindObjectOfType<HP_Bar>();
+        bar = FindObjectOfType<Boss_HP_Bar>();
 
     }
 
