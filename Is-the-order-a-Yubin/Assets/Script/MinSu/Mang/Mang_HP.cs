@@ -47,6 +47,6 @@ public class Mang_HP : MonoBehaviour
                 Debug.Log("xp보내기 실패...");
             }
         }
-        bar.Damage(damage);
+
     }
 }

@@ -18,6 +18,7 @@ public class Fire : MonoBehaviour
     private void Awake()
     {
         M_HP = FindObjectOfType<Monster_HP>();
+        curDamage = damage;
     }
 
     // Update is called once per frame
@@ -33,6 +34,11 @@ public class Fire : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("데미지"+damage);
+        M_HP.Damage(damage);
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("데미지" + damage);
         M_HP.Damage(damage);
     }
 }

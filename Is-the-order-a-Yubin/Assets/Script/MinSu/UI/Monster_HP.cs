@@ -15,6 +15,7 @@ public class Monster_HP : MonoBehaviour
         maxHealth = amount;
 
     }
+
     void Start()
     {
         curHealth = maxHealth;
