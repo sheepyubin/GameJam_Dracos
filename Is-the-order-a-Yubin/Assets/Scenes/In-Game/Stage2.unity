@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 2103211771022611194, guid: 932f0765458d77f4b8ca5e4130a37e41, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1981775018}
     - target: {fileID: 2103211771022611194, guid: 932f0765458d77f4b8ca5e4130a37e41, type: 3}
       propertyPath: sPoint
       value: 
