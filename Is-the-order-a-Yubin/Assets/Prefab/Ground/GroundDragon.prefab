@@ -148,7 +148,7 @@ MonoBehaviour:
   stonePrefab: {fileID: 8436980377702398430, guid: 4771a55fd43a51244912aaad40637e90, type: 3}
   terrainPrefab: {fileID: 5508758333359759337, guid: 82fe5df099da14f408102a324382a67d, type: 3}
   dustRangePrefab: {fileID: 5415753300411393769, guid: 23942ef6c1a8b824cbcc1ee5669310b6, type: 3}
-  skillRangePrefab: {fileID: 5417986540235376934, guid: e630060a3a9785845bebaca7747276c1, type: 3}
+  quakeRangePrefab: {fileID: 5417986540235376934, guid: e630060a3a9785845bebaca7747276c1, type: 3}
   sPoint: {fileID: 575290078754368487}
   quackAttack: {fileID: 4391672167376548548, guid: e630060a3a9785845bebaca7747276c1, type: 3}
   isAttacking: 0

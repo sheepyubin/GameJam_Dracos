@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TerrainGeneration : MonoBehaviour
 {
+    EffectPlay effectPlay;
+
     public float speed = 10f;
     public float lifeTime = 20f;
     public float angle = 20f;
@@ -27,6 +29,7 @@ public class TerrainGeneration : MonoBehaviour
     }
     void Start()
     {
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
         // prefab을 시간에 맞게 지운다
         Destroy(gameObject, lifeTime);
         // 발사체 무작위 각도 설정
@@ -50,6 +53,7 @@ public class TerrainGeneration : MonoBehaviour
         {
             if (move)
             {
+                effectPlay.enemySkill();
                 Instantiate(skillRangePrefab, transform.position, Quaternion.identity);
                 rigid2D.velocity = Vector2.zero;
                 rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;

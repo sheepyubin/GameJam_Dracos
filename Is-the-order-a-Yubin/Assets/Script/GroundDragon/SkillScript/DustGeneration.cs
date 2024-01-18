@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DustGeneration : MonoBehaviour
 {
+    EffectPlay effectPlay; //효과음용
+
     public float speed = 3f;
     public float lifeTime = 1f;
     public float angle = 20f;
 
     private float attackAngle;
 
-    public Vector3 startSize = new Vector3(1f, 1f, 1f);
-    public Vector3 targetSize = new Vector3(1.5f, 1.5f, 1.5f);
+    public Vector2 startSize = new Vector2(0.1f, 0.1f);
+    public Vector2 targetSize = new Vector2(0.5f, 0.5f);
 
     public Color startColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     public Color targetColor = new Color(1.0f, 0.0f, 0.0f, 0.0f);
@@ -20,12 +22,14 @@ public class DustGeneration : MonoBehaviour
     public float fadeDuration = 2.0f;
 
     private float elapsedTime = 0.0f;
-    private Vector3 originalSize;
+    private Vector2 originalSize;
     private Color originalColor;
 
     // Start is called before the first frame update
     void Start()
     {
+        effectPlay = GameObject.Find("OptionCanvas").GetComponent<EffectPlay>();
+        effectPlay.enemyAttack();
         // prefab을 시간에 맞게 지운다
         Destroy(gameObject, lifeTime);
 
@@ -54,12 +58,12 @@ public class DustGeneration : MonoBehaviour
         SetObjectColor(newColor);
     }
 
-    void AnimateSize(Vector3 target)
+    void AnimateSize(Vector2 target)
     {
         elapsedTime += Time.deltaTime;
-        SetObjectSize(Vector3.Lerp(originalSize, target, Mathf.Clamp01(elapsedTime / animationDuration)));
+        SetObjectSize(Vector2.Lerp(originalSize, target, Mathf.Clamp01(elapsedTime / animationDuration)));
     }
-    void SetObjectSize(Vector3 newSize) => transform.localScale = newSize;
+    void SetObjectSize(Vector2 newSize) => transform.localScale = newSize;
 
     void SetObjectColor(Color newColor)
     {

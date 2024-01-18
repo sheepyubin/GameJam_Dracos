@@ -11,7 +11,7 @@ public class GroundDragonAttack : MonoBehaviour
     public GameObject terrainPrefab; // 지형 Prefab
 
     public GameObject dustRangePrefab; // 먼지 범위 Prefab
-    public GameObject skillRangePrefab; // 스킬 범위 Prefab
+    public GameObject quakeRangePrefab; // 스킬 범위 Prefab
     public GameObject sPoint;
 
     public QuackAttack quackAttack;
@@ -41,7 +41,7 @@ public class GroundDragonAttack : MonoBehaviour
             switch (skill)
             {
                 case 3: Terrain(); break;
-                case 7: ShowSkillRange(); ShowDustSRange(); break;
+                case 7: ShowQuakeRange(); ShowDustSRange(); break;
                 default: StoneAttack(); break;
             }
             cooldownTimer = 0f; // 타이머 초기화
@@ -50,34 +50,36 @@ public class GroundDragonAttack : MonoBehaviour
             isAttacking = false;
 
     }
-    private void StoneAttack()
+    private void StoneAttack() // 바로 공격
     {
         isAttacking = true;
         Instantiate(stonePrefab, sPoint.transform.position, sPoint.transform.rotation);
         skill++;
         effectPlay.enemyAttack();
     }
-    private void Terrain()
+    private void Terrain() // 바로 공격
     {
         isAttacking = true;
         for (int i = 0; i < 3; i++)
-        {
             Instantiate(terrainPrefab, transform.position, transform.rotation);
-        }
         skill++;
         effectPlay.enemyAttack();
     }
-    private void ShowDustSRange()
+    private void ShowDustSRange() // 생성된 범위가 스킬 사용
     {
         isAttacking = true;
+        // 소환된 범위 Prefeb이 스킬을 사용함
         Instantiate(dustRangePrefab, transform.position, Quaternion.identity);
-        skill = 0;
         effectPlay.enemySkill();
+        skill = 0;
+
     }
-    private void ShowSkillRange()
+    private void ShowQuakeRange() // 생성된 범위가 스킬 사용
     {
         isAttacking = true;
-        Instantiate(skillRangePrefab, transform.position, Quaternion.identity);
+        // 소환된 범위 Prefeb이 스킬을 사용함
+        Instantiate(quakeRangePrefab, transform.position, Quaternion.identity);
+        effectPlay.enemySkill();
         skill = 0;
     }
 
