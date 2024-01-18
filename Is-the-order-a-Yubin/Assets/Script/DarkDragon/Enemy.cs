@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class Skill : MonoBehaviour
@@ -39,6 +41,10 @@ public class Enemy : MonoBehaviour
     public bool isFitting = false;  //체력 감소하는지 변수
     public bool isStrengthen= false;  //강화중인지 변수
 
+    public SpriteRenderer spriteRenderer;
+    Sprite[] sprites;
+    public GameObject playerObject;
+
     public Skill[] SkillList;       // 스킬 리스트
 
     private void StartFit()
@@ -57,7 +63,7 @@ public class Enemy : MonoBehaviour
         isFitting = true;
 
         Debug.Log("크와아앙");
-        //여기에 강화 로직
+        spriteRenderer.sprite = sprites[0];
     }
 
     // DarkDragon 스킬 초기화 함수
@@ -104,6 +110,9 @@ public class Enemy : MonoBehaviour
         SetEnemyStatus("DarkDragon", 1000, 3f, 500f);
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
         SetDarkDragonSkill();
+        sprites = Resources.LoadAll<Sprite>("Resources/Charactor/BuleDragon");
+        Debug.Log(sprites[0]);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // 프레임마다 호출되는 함수
