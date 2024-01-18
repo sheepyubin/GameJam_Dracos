@@ -28,7 +28,6 @@ public class GroundDragonAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Attack();
     }
     private void Attack()
@@ -39,16 +38,9 @@ public class GroundDragonAttack : MonoBehaviour
         {
             switch (skill)
             {
-                case 3:
-                    Terrain();
-                    break;
-                case 7:
-                    ShowSkillRange();
-                    ShowDustSRange();
-                    break;
-                default:
-                    StoneAttack();
-                    break;
+                case 3: Terrain(); break;
+                case 7: ShowSkillRange(); ShowDustSRange(); break;
+                default: StoneAttack(); break;
             }
             cooldownTimer = 0f; // 타이머 초기화
         }
